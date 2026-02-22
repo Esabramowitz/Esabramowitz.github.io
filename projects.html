@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projects | Eytan Abramowitz</title>
+  <meta name="description" content="Project portfolio: FEA, CFD, design, and analysis." />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="index.html">EA</a>
+      <div class="nav-links">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link active" href="projects.html">Projects</a>
+        <a class="nav-link" href="about.html">About</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main" class="container">
+    <section class="page-head">
+      <h1>Projects</h1>
+      <p class="muted">
+        Short, recruiter-friendly summaries first. Full writeups and PDFs available.
+      </p>
+
+      <div class="controls">
+        <div class="control">
+          <label for="search">Search</label>
+          <input id="search" type="search" placeholder="FEA, CFD, Ansys, wing, mesh..." autocomplete="off" />
+        </div>
+
+        <div class="control">
+          <label for="filter">Filter</label>
+          <select id="filter">
+            <option value="all">All</option>
+            <option value="fea">FEA</option>
+            <option value="cfd">CFD</option>
+            <option value="aero">Aerospace</option>
+            <option value="manufacturing">Manufacturing</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div id="projectGrid" class="grid">
+        <article class="card project" data-tags="fea aero manufacturing ansys solids">
+          <div class="card-top">
+            <div class="tag">FEA</div>
+            <div class="tag">PLA</div>
+            <div class="tag">3D printed</div>
+          </div>
+          <h2 class="h3">Wing mount structural analysis</h2>
+          <p class="muted">
+            FEA of a 3D-printed wing mount for a modular RC aircraft; includes loading cases, material properties, and a
+            mesh convergence check. :contentReference[oaicite:4]{index=4}
+          </p>
+          <ul class="bullets">
+            <li>Defined boundary conditions and lift/drag-derived loading cases. :contentReference[oaicite:5]{index=5}</li>
+            <li>Reported first principal stress for brittle PLA behavior assumption. :contentReference[oaicite:6]{index=6}</li>
+          </ul>
+          <div class="card-actions">
+            <a class="link" href="projects/wing-mount-fea.html">Case study</a>
+            <a class="link" href="assets/pdfs/Project-Report-Solids-Final.pdf" target="_blank" rel="noopener">PDF</a>
+          </div>
+        </article>
+
+        <article class="card project" data-tags="cfd aero ansys compressible">
+          <div class="card-top">
+            <div class="tag">CFD</div>
+            <div class="tag">Compressible</div>
+            <div class="tag">Ansys</div>
+          </div>
+          <h2 class="h3">External compressible flow study</h2>
+          <p class="muted">
+            Baseline case plus AoA and Mach sweeps for a trapezoidal wing; includes reference values, force transforms,
+            and characteristic curves. :contentReference[oaicite:7]{index=7}
+          </p>
+          <ul class="bullets">
+            <li>Computed mean aerodynamic chord and used projected planform area. :contentReference[oaicite:8]{index=8}</li>
+            <li>Produced CL/CD/CM trends vs AoA and Mach. :contentReference[oaicite:9]{index=9}</li>
+          </ul>
+          <div class="card-actions">
+            <a class="link" href="projects/compressible-flow-cfd.html">Case study</a>
+            <a class="link" href="assets/pdfs/CFD-HW1.pdf" target="_blank" rel="noopener">PDF</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="muted">© <span id="year"></span> Eytan Abramowitz</span>
+      <span class="muted">Projects: concise + documented</span>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
