@@ -1,31 +1,46 @@
 :root{
+  --bg0: #07090c;
   --bg: #0b0f14;
-  --panel: #0f1620;
-  --panel2: #0c131c;
+
+  --panel: rgba(255,255,255,.035);
+  --panel2: rgba(255,255,255,.02);
+
   --text: #e7edf5;
-  --muted: #a8b3c2;
+  --muted: rgba(231,237,245,.70);
+
   --border: rgba(255,255,255,.10);
-  --glow: rgba(71, 153, 255, .12);
-  --accent: #7dd3fc;
-  --accent2: #a78bfa;
-  --shadow: 0 18px 50px rgba(0,0,0,.45);
+  --border2: rgba(255,255,255,.08);
+
+  --accent: rgba(210,220,235,.85);     /* quiet “engineering ink” */
+  --accent2: rgba(231,237,245,.92);
+
+  --shadow: 0 16px 44px rgba(0,0,0,.55);
+
+  --radius: 16px;
+  --radius2: 14px;
 }
 
 *{ box-sizing: border-box; }
 html, body{ height:100%; }
+
 body{
   margin:0;
-  background:
-    radial-gradient(900px 500px at 20% 10%, var(--glow), transparent 55%),
-    radial-gradient(700px 450px at 85% 0%, rgba(167,139,250,.10), transparent 55%),
-    linear-gradient(180deg, #070a0e, var(--bg));
   color: var(--text);
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji";
   line-height: 1.55;
+
+  /* More “meche”: blueprint-ish grid + restrained lighting */
+  background:
+    radial-gradient(900px 520px at 18% 6%, rgba(255,255,255,.05), transparent 58%),
+    radial-gradient(800px 520px at 88% 0%, rgba(255,255,255,.03), transparent 60%),
+    linear-gradient(180deg, var(--bg0), var(--bg)),
+    repeating-linear-gradient(0deg, rgba(255,255,255,.035) 0 1px, transparent 1px 28px),
+    repeating-linear-gradient(90deg, rgba(255,255,255,.03) 0 1px, transparent 1px 28px);
+  background-blend-mode: screen, screen, normal, normal, normal;
 }
 
 a{ color: inherit; text-decoration: none; }
-a:focus{ outline: 2px solid rgba(125,211,252,.6); outline-offset: 3px; border-radius: 10px; }
+a:focus{ outline: 2px solid rgba(231,237,245,.55); outline-offset: 3px; border-radius: 10px; }
 
 .skip-link{
   position:absolute; left:-999px; top:auto;
@@ -34,7 +49,7 @@ a:focus{ outline: 2px solid rgba(125,211,252,.6); outline-offset: 3px; border-ra
 .skip-link:focus{
   left:16px; top:16px; width:auto; height:auto;
   padding:10px 12px;
-  background: var(--panel);
+  background: rgba(20,26,34,.92);
   border: 1px solid var(--border);
   border-radius: 12px;
   z-index: 999;
@@ -42,14 +57,16 @@ a:focus{ outline: 2px solid rgba(125,211,252,.6); outline-offset: 3px; border-ra
 
 .container{ width:min(1040px, calc(100% - 40px)); margin: 0 auto; }
 
+/* Header */
 .site-header{
   position: sticky; top: 0;
   backdrop-filter: blur(10px);
-  background: rgba(11,15,20,.65);
+  background: rgba(11,15,20,.72);
   border-bottom: 1px solid var(--border);
   z-index: 50;
 }
 
+/* More left/right air for nav */
 .nav{
   width: min(1040px, calc(100% - 96px));
   margin: 0 auto;
@@ -57,14 +74,15 @@ a:focus{ outline: 2px solid rgba(125,211,252,.6); outline-offset: 3px; border-ra
   padding: 14px 0;
 }
 
-
+/* Brand feels more “badge” than “app icon” */
 .brand{
-  width: 38px; height: 38px;
+  width: 40px; height: 40px;
   display:grid; place-items:center;
   border-radius: 14px;
   border: 1px solid var(--border);
-  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
-  box-shadow: 0 10px 30px rgba(0,0,0,.30);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+  box-shadow: 0 10px 28px rgba(0,0,0,.45);
   letter-spacing: .5px;
 }
 
@@ -77,31 +95,27 @@ a:focus{ outline: 2px solid rgba(125,211,252,.6); outline-offset: 3px; border-ra
 }
 .nav-link:hover{
   color: var(--text);
-  border-color: rgba(255,255,255,.10);
+  border-color: rgba(255,255,255,.12);
   background: rgba(255,255,255,.03);
 }
 .nav-link.active{
   color: var(--text);
-  border-color: rgba(125,211,252,.35);
-  background: rgba(125,211,252,.06);
+  border-color: rgba(255,255,255,.22);
+  background: rgba(255,255,255,.04);
 }
 
+/* Hero */
 .hero{
   display:grid;
   grid-template-columns: 1fr;
-  gap: 22px;
-  padding: 42px 0 10px;
+  gap: 18px;
+  padding: 52px 0 10px;
   align-items: center;
 }
 
-.hero-single{
-  padding-top: 48px;
-}
-
-
 .eyebrow{
-  color: var(--muted);
-  letter-spacing: .12em;
+  color: rgba(231,237,245,.64);
+  letter-spacing: .14em;
   text-transform: uppercase;
   font-size: 12px;
   margin: 0 0 10px;
@@ -119,65 +133,48 @@ h2{ margin: 0; font-size: 22px; letter-spacing: -0.01em; }
 
 .lede{
   margin: 0 0 18px;
-  color: rgba(231,237,245,.92);
-  max-width: 60ch;
+  color: rgba(231,237,245,.90);
+  max-width: 65ch;
 }
 
 .muted{ color: var(--muted); }
 
+/* Buttons become more “hardware” and less “neon UI” */
 .cta-row{ display:flex; gap: 12px; flex-wrap: wrap; margin: 18px 0 14px; }
 
 .btn{
   display:inline-flex; align-items:center; justify-content:center;
-  gap: 10px;
   padding: 10px 14px;
   border-radius: 14px;
-  border: 1px solid rgba(125,211,252,.35);
-  background: rgba(125,211,252,.10);
+  border: 1px solid rgba(255,255,255,.18);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
   color: var(--text);
-  box-shadow: 0 10px 40px rgba(0,0,0,.28);
+  box-shadow: 0 12px 34px rgba(0,0,0,.45);
 }
-.btn:hover{ background: rgba(125,211,252,.14); }
+.btn:hover{
+  border-color: rgba(255,255,255,.26);
+  background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
+}
 .btn-ghost{
   border: 1px solid rgba(255,255,255,.12);
-  background: rgba(255,255,255,.03);
+  background: rgba(255,255,255,.02);
 }
-.btn-ghost:hover{ background: rgba(255,255,255,.06); }
+.btn-ghost:hover{ background: rgba(255,255,255,.04); }
 
 .meta-row{ display:flex; flex-wrap:wrap; gap: 8px; margin-top: 10px; }
+
+/* Pills become “spec chips” (flat, technical) */
 .pill{
   font-size: 12px;
   padding: 6px 10px;
-  color: rgba(231,237,245,.92);
+  color: rgba(231,237,245,.86);
   border-radius: 999px;
-  border: 1px solid rgba(255,255,255,.12);
-  background: rgba(255,255,255,.03);
-}
-
-.hud{
-  border-radius: 18px;
-  border: 1px solid rgba(255,255,255,.12);
-  background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
-  box-shadow: var(--shadow);
-  overflow: hidden;
-}
-.hud-top{
-  display:flex; align-items:center; gap: 8px;
-  padding: 10px 12px;
-  border-bottom: 1px solid rgba(255,255,255,.10);
+  border: 1px solid rgba(255,255,255,.14);
   background: rgba(0,0,0,.18);
 }
-.dot{ width: 10px; height: 10px; border-radius: 999px; background: rgba(255,255,255,.18); }
-.hud-title{ margin-left: 8px; color: var(--muted); font-size: 12px; letter-spacing: .04em; }
-.hud-code{
-  margin: 0;
-  padding: 14px 14px 16px;
-  color: rgba(231,237,245,.90);
-  font-size: 12px;
-  line-height: 1.55;
-  overflow:auto;
-}
 
+/* Sections / grid */
 .section{ padding: 28px 0; }
 .section-head{ display:flex; align-items:baseline; justify-content:space-between; gap: 14px; margin-bottom: 14px; }
 
@@ -189,36 +186,52 @@ h2{ margin: 0; font-size: 22px; letter-spacing: -0.01em; }
 .grid-3{ grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .grid-2{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
 
+/* Cards become more like “sheet metal panels” */
 .card{
   border-radius: 18px;
-  border: 1px solid rgba(255,255,255,.10);
-  background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
-  box-shadow: 0 10px 35px rgba(0,0,0,.30);
+  border: 1px solid var(--border2);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.02));
+  box-shadow: 0 12px 36px rgba(0,0,0,.48);
   padding: 16px;
+  position: relative;
 }
+
+/* subtle “machined” edge */
+.card::after{
+  content:"";
+  position:absolute;
+  inset: 0;
+  border-radius: 18px;
+  pointer-events:none;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.05);
+}
+
 .card.small{ padding: 14px; }
 
 .card-top{ display:flex; gap: 8px; flex-wrap: wrap; margin-bottom: 10px; }
+
+/* Tags less “product UI”, more “drawing callouts” */
 .tag{
   font-size: 12px;
   padding: 6px 10px;
   border-radius: 999px;
-  border: 1px solid rgba(255,255,255,.12);
-  background: rgba(255,255,255,.03);
-  color: rgba(231,237,245,.92);
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(0,0,0,.20);
+  color: rgba(231,237,245,.88);
 }
 
 .card-actions{ display:flex; gap: 14px; margin-top: 12px; flex-wrap: wrap; }
+
 .link{
-  color: rgba(125,211,252,.95);
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
+  color: rgba(231,237,245,.92);
+  border-bottom: 1px solid rgba(231,237,245,.25);
   padding-bottom: 2px;
 }
-.link:hover{ border-bottom-color: rgba(125,211,252,.55); }
+.link:hover{ border-bottom-color: rgba(231,237,245,.55); }
 
-.list{ margin: 10px 0 0; padding-left: 18px; color: rgba(231,237,245,.92); }
-.bullets{ margin: 10px 0 0; padding-left: 18px; color: rgba(231,237,245,.92); }
+.list{ margin: 10px 0 0; padding-left: 18px; color: rgba(231,237,245,.90); }
+.bullets{ margin: 10px 0 0; padding-left: 18px; color: rgba(231,237,245,.90); }
 
 .footer{
   border-top: 1px solid rgba(255,255,255,.10);
@@ -229,9 +242,7 @@ h2{ margin: 0; font-size: 22px; letter-spacing: -0.01em; }
   display:flex; justify-content:space-between; gap: 12px; flex-wrap: wrap;
 }
 
-.page-head{
-  padding: 34px 0 10px;
-}
+.page-head{ padding: 34px 0 10px; }
 
 .controls{
   display:flex;
@@ -245,26 +256,32 @@ h2{ margin: 0; font-size: 22px; letter-spacing: -0.01em; }
   gap: 8px;
   min-width: 240px;
 }
-label{ font-size: 12px; color: var(--muted); letter-spacing: .08em; text-transform: uppercase; }
+label{
+  font-size: 12px;
+  color: rgba(231,237,245,.62);
+  letter-spacing: .10em;
+  text-transform: uppercase;
+}
 input, select{
   padding: 10px 12px;
   border-radius: 14px;
-  border: 1px solid rgba(255,255,255,.12);
-  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(0,0,0,.22);
   color: var(--text);
 }
-input::placeholder{ color: rgba(168,179,194,.72); }
+input::placeholder{ color: rgba(231,237,245,.45); }
 
 .case-head{ padding: 34px 0 8px; }
 .case-actions{ display:flex; gap: 12px; flex-wrap: wrap; margin-top: 14px; }
 
+/* Callout becomes a “note box” like a drawing */
 .callout{
   margin-top: 12px;
   padding: 12px 12px;
   border-radius: 16px;
-  border: 1px solid rgba(167,139,250,.25);
-  background: rgba(167,139,250,.06);
-  color: rgba(231,237,245,.92);
+  border: 1px dashed rgba(231,237,245,.28);
+  background: rgba(0,0,0,.18);
+  color: rgba(231,237,245,.90);
 }
 
 .contact{
@@ -275,7 +292,6 @@ input::placeholder{ color: rgba(168,179,194,.72); }
 }
 
 @media (max-width: 920px){
-  .hero{ grid-template-columns: 1fr; }
   .grid{ grid-template-columns: 1fr; }
   .grid-2{ grid-template-columns: 1fr; }
   .grid-3{ grid-template-columns: 1fr; }
