@@ -51,9 +51,12 @@ a:focus{ outline: 2px solid rgba(125,211,252,.6); outline-offset: 3px; border-ra
 }
 
 .nav{
+  width: min(1040px, calc(100% - 96px));
+  margin: 0 auto;
   display:flex; align-items:center; justify-content:space-between;
   padding: 14px 0;
 }
+
 
 .brand{
   width: 38px; height: 38px;
@@ -85,11 +88,16 @@ a:focus{ outline: 2px solid rgba(125,211,252,.6); outline-offset: 3px; border-ra
 
 .hero{
   display:grid;
-  grid-template-columns: 1.15fr .85fr;
+  grid-template-columns: 1fr;
   gap: 22px;
   padding: 42px 0 10px;
   align-items: center;
 }
+
+.hero-single{
+  padding-top: 48px;
+}
+
 
 .eyebrow{
   color: var(--muted);
