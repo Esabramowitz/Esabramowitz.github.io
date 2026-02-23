@@ -186,7 +186,7 @@ h2{ margin: 0; font-size: 22px; letter-spacing: -0.01em; }
 .grid-3{ grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .grid-2{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
 
-/* Image-first project cards (home page) */
+/* Image-first project cards (home + projects pages) */
 .project-card{
   padding: 0;
   overflow: hidden;
@@ -208,13 +208,14 @@ h2{ margin: 0; font-size: 22px; letter-spacing: -0.01em; }
   border: 1px solid rgba(255,255,255,.10);
   background: rgba(0,0,0,.22);
   overflow: hidden;
+  padding: 10px;
 }
 
 .project-image img{
   display: block;
   width: 100%;
-  height: 220px;        /* adjust if you want taller */
-  object-fit: cover;
+  height: 240px;
+  object-fit: contain;
 }
 
 .project-links{
@@ -224,7 +225,6 @@ h2{ margin: 0; font-size: 22px; letter-spacing: -0.01em; }
   margin-top: 12px;
 }
 
-/* Make the whole card feel clickable without being “app-like” */
 .project-hit:hover .project-image{
   border-color: rgba(255,255,255,.18);
 }
