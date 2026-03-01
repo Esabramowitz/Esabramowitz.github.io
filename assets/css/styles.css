@@ -416,8 +416,8 @@ input::placeholder{ color: rgba(231,237,245,.45); }
 
 .pdf-frame-full{
   width: 100%;
-  height: calc(100vh - 69px - 108px);
-  min-height: 640px;
+  height: calc(160vh - 69px - 108px);
+  min-height: 1100px;
   border: 1px solid rgba(255,255,255,.08);
   border-radius: 14px;
   background: #11161d;
@@ -444,7 +444,7 @@ input::placeholder{ color: rgba(231,237,245,.45); }
     flex-direction: column;
   }
   .pdf-frame-full{
-    height: calc(100vh - 69px - 150px);
-    min-height: 520px;
+    height: calc(150vh - 69px - 150px);
+    min-height: 900px;
   }
 }
