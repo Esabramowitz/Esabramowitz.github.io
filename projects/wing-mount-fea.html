@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Wing Mount FEA | Eytan Abramowitz</title>
-  <meta name="description" content="Finite element analysis case study: 3D-printed wing mount." />
+  <meta name="description" content="Finite element analysis project PDF viewer: 3D-printed wing mount." />
   <link rel="stylesheet" href="../assets/css/styles.css" />
 </head>
 
@@ -15,9 +15,8 @@
     <nav class="nav" aria-label="Primary">
       <a class="brand" href="../index.html">EA</a>
       <div class="nav-links">
-        <a class="nav-link" href="../index.html">Home</a>
-        <a class="nav-link active" href="../projects.html">Projects</a>
-        <a class="nav-link" href="../about.html">About</a>
+        <a class="nav-link" href="../index.html#about">About</a>
+        <a class="nav-link active" href="../index.html#projects">Projects</a>
       </div>
     </nav>
   </header>
@@ -27,75 +26,22 @@
       <p class="eyebrow">FEA • Structures • 3D printing</p>
       <h1>Wing mount structural analysis</h1>
       <p class="lede">
-        Finite element analysis of a 3D-printed wing mount used to attach wings to a carbon-fiber square-tube fuselage
-        in a modular RC aircraft design.
+        The project report is embedded below so the PDF itself serves as the project page.
       </p>
 
       <div class="case-actions">
-        <a class="btn" href="../assets/pdfs/Project-Report-Solids-Final.pdf" target="_blank" rel="noopener">Open PDF</a>
-        <a class="btn btn-ghost" href="../projects.html">Back to projects</a>
+        <a class="btn" href="../assets/pdfs/Project-Report-Solids-Final.pdf" target="_blank" rel="noopener">Open PDF in new tab</a>
+        <a class="btn btn-ghost" href="../index.html#projects">Back to projects</a>
       </div>
     </section>
 
     <section class="section">
-      <div class="grid grid-2">
-        <div class="card">
-          <h2 class="h3">Goal</h2>
-          <p class="muted">
-            Ensure the wing mount can withstand expected aerodynamic forces during flight, since failure would be
-            critical.
-          </p>
-        </div>
-        <div class="card">
-          <h2 class="h3">Tools</h2>
-          <ul class="list">
-            <li>CAD + FEA workflow (SolidWorks/Ansys-style)</li>
-            <li>Meshing + convergence checks</li>
-            <li>Material modeling assumptions</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="card">
-        <h2 class="h3">Setup</h2>
-        <ul class="list">
-          <li>Fixed constraint at the fuselage slot bottom; additional slot boundaries prevent inward motion while allowing sliding.</li>
-          <li>Loads derived from lift and drag coefficients and wing geometry, with multiple reaction-force cases explored.</li>
-          <li>Primary failure metric: first principal stress, treating PLA as brittle.</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="grid grid-2">
-        <div class="card">
-          <h2 class="h3">Material assumptions</h2>
-          <p class="muted">
-            PLA modeled as linear isotropic (noting 3D-printed parts are not truly isotropic); tensile strength listed
-            around 50 MPa.
-          </p>
-        </div>
-        <div class="card">
-          <h2 class="h3">Mesh confidence</h2>
-          <p class="muted">
-            Performed a mesh study to check that peak stress locations were consistent and not singularities.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="card">
-        <h2 class="h3">Results snapshot</h2>
-        <p class="muted">
-          Stress results were reported across multiple loading “cases” and velocities; some conditions exceed the
-          assumed brittle strength threshold, motivating physical validation testing.
-        </p>
-        <div class="callout">
-          Next step: clamp + pull test with a force gauge to validate simulation before redesigning.
-        </div>
+      <div class="pdf-shell">
+        <iframe
+          class="pdf-frame"
+          src="../assets/pdfs/Project-Report-Solids-Final.pdf#view=FitH"
+          title="Wing mount structural analysis PDF"
+        ></iframe>
       </div>
     </section>
   </main>
@@ -103,7 +49,7 @@
   <footer class="footer">
     <div class="container footer-inner">
       <span class="muted">© <span id="year"></span> Eytan Abramowitz</span>
-      <span class="muted">FEA case study</span>
+      <span class="muted">PDF viewer</span>
     </div>
   </footer>
 
