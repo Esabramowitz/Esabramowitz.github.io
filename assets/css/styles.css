@@ -395,7 +395,7 @@ input::placeholder{ color: rgba(231,237,245,.45); }
 }
 
 .viewer-toolbar{
-  width: min(1200px, calc(100% - 40px));
+  width: min(1040px, calc(100% - 40px));
   margin: 0 auto;
   padding: 24px 0 18px;
   display: flex;
@@ -409,12 +409,17 @@ input::placeholder{ color: rgba(231,237,245,.45); }
   font-size: clamp(30px, 4vw, 44px);
 }
 
+.viewer-frame-wrap{
+  width: min(1040px, calc(100% - 40px));
+  margin: 0 auto 28px;
+}
+
 .pdf-frame-full{
   width: 100%;
   height: calc(100vh - 69px - 108px);
   min-height: 640px;
-  border-top: 1px solid rgba(255,255,255,.08);
-  border-radius: 0;
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 14px;
   background: #11161d;
 }
 
