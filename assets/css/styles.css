@@ -404,7 +404,6 @@ input::placeholder{ color: rgba(231,237,245,.45); }
 
 .viewer-summary p{
   margin: 0;
-  max-width: 76ch;
   color: rgba(231,237,245,.86);
   font-size: 17px;
   line-height: 1.7;
