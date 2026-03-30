@@ -369,24 +369,12 @@ input::placeholder{ color: rgba(231,237,245,.45); }
   place-items: center;
 }
 
-.about-photo-placeholder{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  padding: 28px;
-  text-align: center;
-}
-
-.about-photo-title{
-  font-size: 20px;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-}
-
-.about-photo-note{
-  color: rgba(231,237,245,.68);
-  max-width: 24ch;
+.about-photo-image{
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 22%;
 }
 
 .viewer-main{
