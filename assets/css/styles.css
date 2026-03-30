@@ -333,8 +333,8 @@ input::placeholder{ color: rgba(231,237,245,.45); }
 
 .about-section{
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(280px, .85fr);
-  gap: 40px;
+  grid-template-columns: minmax(0, 1.25fr) minmax(300px, .75fr);
+  gap: 24px;
   align-items: center;
   padding: 56px 0 30px;
 }
