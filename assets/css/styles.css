@@ -345,6 +345,11 @@ input::placeholder{ color: rgba(231,237,245,.45); }
   gap: 18px;
 }
 
+.about-copy .lede,
+.about-copy .about-body{
+  margin: 0;
+}
+
 .about-copy .cta-row,
 .about-copy .meta-row{
   margin-top: 0;
