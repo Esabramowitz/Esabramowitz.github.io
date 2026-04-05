@@ -350,6 +350,12 @@ input::placeholder{ color: rgba(231,237,245,.45); }
   margin: 0;
 }
 
+.about-copy .about-body a{
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
 .about-copy .cta-row,
 .about-copy .meta-row{
   margin-top: 0;
