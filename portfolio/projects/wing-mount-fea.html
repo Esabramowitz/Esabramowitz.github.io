@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Wing Mount FEA | Eytan Abramowitz</title>
+  <meta name="description" content="Finite element analysis project PDF viewer: 3D-printed wing mount." />
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="../index.html">EA</a>
+      <div class="nav-links">
+        <a class="nav-link" href="../index.html#about">About</a>
+        <a class="nav-link active" href="../index.html#projects">Projects</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main" class="viewer-main">
+    <section class="viewer-toolbar">
+      <div>
+        <p class="eyebrow">FEA • Structures • 3D printing</p>
+        <h1 class="viewer-title">Wing mount structural analysis</h1>
+      </div>
+      <a class="btn btn-ghost" href="../index.html#projects">Back to projects</a>
+    </section>
+
+    <section class="viewer-summary">
+      <p>
+        This project uses finite element analysis to evaluate a 3D-printed wing mount for Columbia AIAA’s RC aircraft,
+        with flight loads estimated from lift and drag across multiple reaction-force cases and airspeeds. The study
+        models PLA material behavior, checks mesh quality, and compares different support configurations to understand
+        where the part is most likely to fail in level flight. The results show several cases approaching or exceeding
+        the assumed brittle strength of the material, pointing to the need for physical validation and likely design or
+        material changes before the part is flight-ready.
+      </p>
+    </section>
+
+    <div class="viewer-frame-wrap">
+      <iframe
+        class="pdf-frame pdf-frame-full"
+        src="../assets/pdfs/Project-Report-Solids-Final.pdf#view=Fit"
+        title="Wing mount structural analysis PDF"
+      ></iframe>
+    </div>
+  </main>
+</body>
+</html>
